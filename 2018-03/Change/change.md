@@ -32,14 +32,14 @@ Cách 5: Lấy 5 phiếu đổi quà giá 1.
 
 ## Ý tưởng
 
-**Bước 1**
+**Bước 1**  
 Khai báo mảng hai chiều *d*, với *d[p][g]* là số cách lấy *p* phiếu đổi quà giá từ 1 đến *g*.  
 Nói cách khác: *p* phiếu, ứng với hàng, *g* giá ứng với cột.  
 
-**Bước 2**
+**Bước 2**  
 Khởi tạo cột 1 đều là 1 cách, vì với mức giá g = 1, chỉ có duy nhất 1 cách đổi quà cho mọi số phiếu.
 
-**Bước 3**
+**Bước 3**  
 Duyệt mảng *d* theo hàng *p* và cột *g*, lần lượt điền các giá trị vào ô *d[p][g]*.  
 
 Nếu p < g, nghĩa là số phiếu < mức giá, thì không đủ phiếu để đổi quà giá cao, tức không có cách đổi. Do đó, số cách vẫn như cũ: *d[p][g]  =  d[p][g  -  1]*.  
@@ -68,5 +68,5 @@ Do đó, số cách của trường hợp 2 là *d[p - g][g]*.
 Như vậy, khi p > g thì số cách = trường hợp 1 + trường hợp 2.  
 Nghĩa là, *d[p][g]  =  d[p][g  -  1]  +  d[p  -  g][g]*.  
 
-**Bước 4**
+**Bước 4**  
 Output chính là phần tử cuối cùng của mảng *d*, tức *d[n][k]*.
